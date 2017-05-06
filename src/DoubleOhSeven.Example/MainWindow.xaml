@@ -1,0 +1,25 @@
+﻿<Window x:Class="DoubleOhSeven.Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoubleOhSeven.Example"
+        xmlns:dos="clr-namespace:DoubleOhSeven;assembly=DoubleOhSeven"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance local:CounterViewModel, IsDesignTimeCreatable=True}"
+        Title="MainWindow" Height="200" Width="400">
+    <DockPanel>
+        <TextBlock
+            DockPanel.Dock="Top"
+            Text="{Binding Counter}"
+            FontSize="30pt"
+            Padding="5"
+        />
+        <Button
+            DockPanel.Dock="Bottom"
+            Content="Increment Counter"
+            Command="{dos:Bond IncrementCounter}"
+            IsEnabled="{Binding CanIncrementCounter}"
+        />
+    </DockPanel>
+</Window>
