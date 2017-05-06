@@ -15,12 +15,15 @@ When not use this library
 
 ```xml
 <TextBlock Text="{Binding Counter}" />
-<Button Command="{Binding DoSomethingCommand}" />
+<Button Command="{Binding IncrementCounterCommand}" />
 ```
 
 ```csharp
 public class CounterViewModel : BaseViewModel
 {
+    public ICommand IncrementCounterCommand =>
+        new RelayCommand(x => CanIncrementCounter, x => IncrementCounter());
+    
     public int Counter
     {
         get => counter;
@@ -28,9 +31,6 @@ public class CounterViewModel : BaseViewModel
     }
     
     private int counter;
-    
-    public ICommand IncrementCounterCommand =>
-        new RelayCommand(x => CanIncrementCounter, x => IncrementCounter());
     
     public bool CanIncrementCounter => Counter < 10;
     
