@@ -14,7 +14,7 @@ When not use this library
 ### Before
 
 ```xml
-<TextBlock Text={Binding Counter} />
+<TextBlock Text="{Binding Counter}" />
 <Button Command="{Binding DoSomethingCommand}" />
 ```
 
@@ -52,7 +52,7 @@ public class CounterViewModel : BaseViewModel
 This example uses `DoubleOhSeven.Bond` in conjunction with `Fody.NotifyPropertyChanged` to reduce the ViewModel down to a simple POCO.
 
 ```xml
-<TextBlock Text={Binding Counter} />
+<TextBlock Text="{Binding Counter}" />
 <Button
     Command="{dos:Bond IncrementCounter}"
     IsEnabled="{Binding CanIncrementCounter}"
